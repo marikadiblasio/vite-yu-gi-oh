@@ -1,12 +1,12 @@
 <template>
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card">
+    <div class="col-12 d-flex col-md-6 col-lg-3">
+      <div class="card m-2 border-0">
         <img :src="image" :alt="name">
         <div class="card-body text-center">
             <h6 class="text-white text-uppercase">{{name}}</h6>
             <span> {{archetype}}</span>
         </div>
-      </div> 
+        </div>
     </div>
 </template>
 

@@ -3,7 +3,7 @@
         <div class="container p-3"> 
             <select @change="getfilteredArch()" class="py-1 rounded" name="archs" id="archs" v-model="selectedType">
                 <option value="all" selected>All</option>
-                <option value="none" selected>No type</option>
+                <option value="none">No type</option>
                 <option v-for="(type, i) in store.Archetypes" :key="i" :value="type.archetype_name">{{ type.archetype_name }}</option>
             </select>
         </div>
@@ -35,26 +35,22 @@
         },
          methods: {
             getfilteredArch(){
-                if((this.selectedType ==='') || (this.selectedType !== 'all')){
+                if((this.selectedType === 'all') || (this.selectedType === 'none')){
+                    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=0').then((res)=>{           
+                    this.filteredArray = res.data.data;
+                    })
+                } else {
                     axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${this.selectedType}`).then((res) => {
                     this.filteredArray= res.data.data;
                 })
-             }else{
-            //     this.filteredArray = store.CharsList;
-                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=0').then((res)=>{
-                this.filteredArray = res.data.data;
-                 })
-                
-            // }
-             }
+            }
         },
         mounted(){
             console.log(store.CharsList);
-           console.log(this.selectedType);
-           this.getfilteredArch();
+            console.log(this.selectedType);
+            this.getfilteredArch();
         }
-    }
-}
+         }}
 </script>
 
 <style lang="scss" scoped>

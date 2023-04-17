@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 d-flex col-md-6 col-lg-3">
+    <div class="col-12 d-flex justify-content-center col-md-6 col-lg-3">
       <div class="card m-2 border-0">
         <img :src="image" :alt="name">
         <div class="card-body text-center">

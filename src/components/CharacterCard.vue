@@ -13,7 +13,19 @@
 <script>
     export default {
         name: 'CharacterCard',
-        props: ['image', 'name', 'archetype']
+        props: {
+            image: {
+                type: String,
+            },
+            name: {
+                type: String,
+            }, 
+            archetype: {
+                type: String,
+                // required: true,
+                default: 'none'
+            }
+        }
     }
 </script>
 

@@ -3,6 +3,7 @@
         <div class="container p-3"> 
             <select @change="getfilteredArch()" class="py-1 rounded" name="archs" id="archs" v-model="selectedType">
                 <option value="all" selected>All</option>
+                <option value="none" selected>No type</option>
                 <option v-for="(type, i) in store.Archetypes" :key="i" :value="type.archetype_name">{{ type.archetype_name }}</option>
             </select>
         </div>
@@ -49,7 +50,8 @@
         },
         mounted(){
             console.log(store.CharsList);
-            // this.getfilteredArch();
+           console.log(this.selectedType);
+           this.getfilteredArch();
         }
     }
 }

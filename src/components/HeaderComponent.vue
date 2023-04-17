@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="bg-white">
         Header
     </header>
 </template>

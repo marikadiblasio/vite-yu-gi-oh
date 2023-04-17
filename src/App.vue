@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <p>{{ store.Archetypes }}</p> -->
     <HeaderComponent />
     <CharactersList />
   </div>
@@ -25,15 +24,16 @@
     methods: {
       getChars(){
         axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=0').then((res)=>{
-          //console.log(res.data.data[0]);
+          console.log(res.data.data[0]);
+          store.loading=true;
           store.CharsList= res.data.data;
-          
+          store.loading=false;
 
         })
       },
       getArchetypes(){
         axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php').then((result) => {
-          console.log(result.data);
+          // console.log(result.data);
           store.Archetypes = result.data;
         })
       }
@@ -41,6 +41,7 @@
     mounted(){
       this.getChars();
       this.getArchetypes();
+      // console.log('app');
     }
   }
 </script>

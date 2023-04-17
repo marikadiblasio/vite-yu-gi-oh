@@ -1,0 +1,15 @@
+@use '../partials/variables' as *;
+
+@import 'bootstrap/scss/bootstrap.scss';
+$fa-font-path: "../webfonts";
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+
+@import '@fontsource/montserrat/index.css';
+@import '@fontsource/montserrat/700.css';
+
+body{
+font-family: $font;
+background-color: $primary;
+color: $dark;
+}

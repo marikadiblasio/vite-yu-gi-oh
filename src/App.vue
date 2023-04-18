@@ -37,7 +37,6 @@
       },
       getArchetypes(){
         axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php').then((result) => {
-          // console.log(result.data);
           store.Archetypes = result.data;
         })
       }
@@ -45,11 +44,9 @@
     mounted(){
       this.getChars();
       this.getArchetypes();
-      // console.log('app');
     }
   }
 </script>
 
 <style lang="scss" scoped>
-
 </style>

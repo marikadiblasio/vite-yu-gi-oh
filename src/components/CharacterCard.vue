@@ -34,7 +34,4 @@
     .card-body{
         background-color: $primary;
     }
-    .col {
-        background-color: red;
-    }
 </style>

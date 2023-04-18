@@ -23,7 +23,7 @@
             archetype: {
                 type: String,
                 // required: true,
-                default: 'none'
+                default: 'No rchetype'
             }
         }
     }

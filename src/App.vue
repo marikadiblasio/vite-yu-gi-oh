@@ -1,7 +1,10 @@
 <template>
   <div>
     <HeaderComponent />
-    <CharactersList />
+    <main>
+      <SearchBar />
+      <CharactersList />
+    </main>
   </div>
 </template>
 
@@ -9,11 +12,13 @@
   import {store} from './data/store';
   import axios from 'axios';
   import HeaderComponent from './components/HeaderComponent.vue';
+  import SearchBar from './components/SearchBar.vue';
   import CharactersList from './components/CharactersList.vue';
   export default {
     name: 'App',
     components: {
     HeaderComponent,
+    SearchBar,
     CharactersList
 },
     data(){
@@ -28,7 +33,6 @@
           store.loading=true;
           store.CharsList= res.data.data;
           store.loading=false;
-
         })
       },
       getArchetypes(){

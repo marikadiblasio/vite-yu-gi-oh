@@ -4,4 +4,5 @@ export const store= reactive ({
     CharsList : [],
     loading : true,
     Archetypes : [],
+    errorMessage: ''
 })
